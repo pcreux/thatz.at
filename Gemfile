@@ -1,3 +1,5 @@
+source :gemcutter
+
 gem 'sinatra'
 gem 'haml'
 gem 'chronic'
