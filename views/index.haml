@@ -1,0 +1,28 @@
+%html
+  %head
+    %link{:href => "stylesheet.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:type => "text/javascript", :src => "/jquery-1.4.2.min.js"}
+    %script{:type => "text/javascript", :src => "/thatz.js"}
+    %script{:type => "text/javascript", :src => "/index.js"}
+  %body
+    #main
+      %table
+        %tr.original
+          %td.identifier
+            Original:
+          %td.timezone
+            = @original_time.timezone
+          %td.time
+            = @original_time.time.strftime('%A %b %d, %Y %H:%M')
+        - @times.each do |t|
+          %tr{:id  => t.timezone_code.gsub('+', 'p'), :class => 'tz_time'}
+            %td.identifier
+            %td.timezone
+              = t.timezone
+            %td.time
+              = t.time.strftime('%A %b %d, %Y %H:%M')
+        %tr
+          %td
+          %td
+            %a{:href => '#', :onClick => "show_all()"} Not your timezone?
+

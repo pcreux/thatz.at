@@ -1,0 +1,35 @@
+#main {
+  font-size: 20pt;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 600px;
+  margin: 0 auto;
+}
+
+table {
+  padding-top: 50px;
+
+}
+
+td.identifier {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.original td {
+  padding-bottom: 25px;
+  color: #888;
+}
+
+.tz_time {
+  display: none;
+  color: #AAA;
+}
+
+.user {
+  color: black;
+}
+
+.timezone {
+  width: 300px;
+}
+
