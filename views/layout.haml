@@ -1,0 +1,12 @@
+%html
+  %head
+    %link{:href => "/stylesheet.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:type => "text/javascript", :src => "/jquery-1.4.2.min.js"}
+    %script{:type => "text/javascript", :src => "/thatz.js"}
+    %script{:type => "text/javascript", :src => "/index.js"}
+    %script{:type => "text/javascript", :src => "/time.js"}
+    %title
+      thatz.at/
+  %body
+    #main
+      = yield

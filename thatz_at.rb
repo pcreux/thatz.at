@@ -13,7 +13,6 @@ class TheTime
 end
 
 get '/:time' do
-  #param = CGI.unescape(params[:time])
   param = params[:time]
   if human_format_with_timezone?(param)
     redirect thatz_url_for_human_format_with_timezone(param)
@@ -22,12 +21,17 @@ get '/:time' do
   elsif thatz_format?(param)
     @original_time = original_time_for_thatz_format(param)
     @times = all_times_for_thatz_format(param)
-    haml :index
+    haml :time
   else
-    "Don't know what to do with this url!"
+    redirect "/cannot-parse/#{CGI.escape(param)}"
   end
 end
 
 get '/cannot-parse/:humanshit' do
-  "Cannot parse #{params[:humanshit]}"
+  @input = params[:humanshit]
+  haml :cannot_parse
+end
+
+get '/' do
+  haml :index
 end

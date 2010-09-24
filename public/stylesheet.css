@@ -1,13 +1,49 @@
 #main {
-  font-size: 20pt;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
+  font-size: 12pt;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 20px;
+}
+
+.hint {
+  font-size: 10pt;
+}
+
+form {
+  text-align: center;
+}
+
+p.error {
+  text-align: center;
+  color: #555;
+}
+
+input {
+  font-size: 12pt;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 200px;
+}
+
+.hint {
+  margin-top: 2px;
+  color: #555;
+  text-align: center;
 }
 
 table {
-  padding-top: 50px;
+  font-size: 12pt;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
 
+td {
+  color: #111;
+  padding: 4px;
+  padding-bottom: 4px;
+  vertical-align: baseline;
 }
 
 td.identifier {
@@ -17,19 +53,39 @@ td.identifier {
 
 .original td {
   padding-bottom: 25px;
-  color: #888;
 }
 
 .tz_time {
   display: none;
-  color: #AAA;
 }
 
-.user {
-  color: black;
+.tz_time td {
+  color: #555;
+}
+
+.tz_time.user td {
+  color: #111;
 }
 
 .timezone {
-  width: 300px;
+  width: 250px;
+  font-size: 14pt;
 }
 
+.date {
+  text-align: right;
+}
+
+.time {
+  font-size: 16pt;
+  text-align: center;
+}
+
+tr.not_your_timezone td {
+  padding-top: 0px;
+}
+
+#time_input {
+  margin-top: 100px;
+  text-align: center;
+}

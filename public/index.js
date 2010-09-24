@@ -1,15 +1,11 @@
-function current_tz_tr() {
-  return $('#' + tz_code().replace('+', 'p'));
+function submitForm() {
+  root_url = location.protocol + '//' + location.host;
+  window.location = root_url + '/' + $('input').val();
+  return false;
 }
 
-$(document).ready(function() {
-  current_tz_tr().
-  addClass('user').
-  show().
-  find('td.identifier').
-  html('Your time:');
-});
+$(function() {
+  $('form').submit(submitForm);
+  $('input').focus();
+})
 
-function show_all() {
-  current_tz_tr().siblings().show();
-}

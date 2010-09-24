@@ -76,7 +76,7 @@ module ThatzAt
     timezone = input[/GMT.*/]
     input.gsub!(/ GMT.*/, '')
     time = Chronic.parse(input)
-    time ? '/' + time.strftime("%b-%d-%Y-%H-%M-#{timezone}") : "/cannot-parse/#{input}"
+    time ? '/' + time.strftime("%b-%d-%Y-%H-%M-#{timezone}") : "/cannot-parse/#{CGI.escape(input)}"
   end
 
   def original_time_for_thatz_format(input)

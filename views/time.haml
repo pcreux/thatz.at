@@ -1,0 +1,27 @@
+%table
+  %tr.original
+    %td.identifier
+      Original:
+    %td.timezone
+      = @original_time.timezone.gsub('_', '&nbsp;').gsub(/\/.+\//, '/')
+    %td.date
+      = @original_time.time.strftime('%a %b %d, %Y')
+    %td.time
+      = @original_time.time.strftime('%H:%M')
+  - @times.each do |t|
+    %tr{:id  => t.timezone_code.gsub('+', 'p'), :class => 'tz_time'}
+      %td.identifier
+      %td.timezone
+        = t.timezone.gsub('_', '&nbsp;').gsub(/\/.+\//, '/')
+      %td.date
+        = t.time.strftime('%a %b %d, %Y')
+      %td.time
+        = t.time.strftime('%H:%M')
+  %tr.not_your_timezone
+    %td
+    %td
+      %a{:href => '#', :onClick => "show_all()"} Not your timezone?
+
+
+#time_input
+  %p= haml :index, :layout => false
