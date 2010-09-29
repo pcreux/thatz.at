@@ -88,11 +88,25 @@ module ThatzAt
   end
 
   class ThatzTime
+    MAJOR_CODES = [
+      'GMT-8-DST', #'US/Pacific'],
+      'GMT-5-DST', #'US/Eastern'],
+      'GMT+0-DST', #'Europe/Dublin'],
+      'GMT+1-DST', #'Europe/Berlin'],
+      'GMT+5.5'  , #'Asia/Kolkata'], # Delhi
+      'GMT+8'    , #'Asia/Hong_Kong'], # Beijin
+      'GMT+9'    , #'Asia/Seoul'], # Tokyo
+      'GMT+10'   , #'Auinputalia/Brisbane'] # Sydney
+    ]
     attr_reader :time, :timezone, :timezone_code
     def initialize(time)
       @time = time
       @timezone = ENV['TZ']
       @timezone_code = find_timezone_code(@timezone)
+    end
+
+    def major?
+      MAJOR_CODES.include? @timezone_code
     end
   end
 

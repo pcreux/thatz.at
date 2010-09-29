@@ -1,15 +1,8 @@
 %table
-  %tr.original
-    %td.identifier
-      Original:
-    %td.timezone
-      = @original_time.timezone.gsub('_', '&nbsp;').gsub(/\/.+\//, '/')
-    %td.date
-      = @original_time.time.strftime('%a %b %d, %Y')
-    %td.time
-      = @original_time.time.strftime('%H:%M')
   - @times.each do |t|
-    %tr{:id  => t.timezone_code.gsub('+', 'p'), :class => 'tz_time'}
+    - major_class = t.major? ? 'major' : nil
+    - original_class = t.timezone_code == @original_time.timezone_code ? 'original' : nil
+    %tr{:id  => t.timezone_code.gsub('+', 'p'), :class => "tz_time #{major_class} #{original_class}"}
       %td.identifier
       %td.timezone
         = t.timezone.gsub('_', '&nbsp;').gsub(/\/.+\//, '/')
@@ -20,7 +13,7 @@
   %tr.not_your_timezone
     %td
     %td
-      %a{:href => '#', :onClick => "show_all()"} Not your timezone?
+      %a{:href => '#', :onClick => "show_all()"} Show all timezones
 
 
 #time_input

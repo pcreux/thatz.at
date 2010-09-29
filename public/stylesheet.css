@@ -51,11 +51,11 @@ td.identifier {
   padding-right: 5px;
 }
 
-.original td {
-  padding-bottom: 25px;
+.original_hidden {
+  display: none;
 }
 
-.tz_time {
+.tz_time { 
   display: none;
 }
 
@@ -64,6 +64,10 @@ td.identifier {
 }
 
 .tz_time.user td {
+  color: #111;
+}
+
+.tz_time.original td {
   color: #111;
 }
 
