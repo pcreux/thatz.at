@@ -1,12 +1,26 @@
 %html
   %head
     %link{:href => "/stylesheet.css", :rel => "stylesheet", :type => "text/css"}
-    %script{:type => "text/javascript", :src => "/jquery-1.4.2.min.js"}
-    %script{:type => "text/javascript", :src => "/thatz.js"}
-    %script{:type => "text/javascript", :src => "/index.js"}
-    %script{:type => "text/javascript", :src => "/time.js"}
+    - %w(http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js /thatz.js /index.js /time.js ).each do |uri|
+      %script{:type => "text/javascript", :src => uri}
     %title
-      thatz.at/
+      thatz.at/ - Your time in any timezone
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3222424-7']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
   %body
     #main
       = yield
+    #about
+      %a{:href => 'http://thatz.at/'}
+        thatz.at
+      is crafted by
+      %a{:href => 'http://eggsonbread.com'}
+        Philippe Creux

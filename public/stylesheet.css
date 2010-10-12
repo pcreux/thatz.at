@@ -9,10 +9,17 @@
 
 .hint {
   font-size: 10pt;
+  margin-top: 2px;
+  color: #555;
+  text-align: center;
 }
 
 form {
   text-align: center;
+}
+
+label a {
+  text-decoration: none;
 }
 
 p.error {
@@ -27,11 +34,6 @@ input {
   width: 200px;
 }
 
-.hint {
-  margin-top: 2px;
-  color: #555;
-  text-align: center;
-}
 
 table {
   font-size: 12pt;
@@ -93,3 +95,33 @@ tr.not_your_timezone td {
   margin-top: 100px;
   text-align: center;
 }
+
+#blablabla {
+  margin-top: 100px;
+  font-weight: normal;
+  text-align: center;
+}
+
+#blablabla h1 {
+  font-size: 12pt;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 2pt;
+  padding: 2pt;
+}
+
+a {text-decoration: underline; }
+a {color: black}
+a:hover {text-decoration: none; color: #555;}
+
+#about {
+  font-size: 9pt;
+  font-weight: normal;
+  margin-top: 100px;
+  color: #555;
+  text-align: center;
+}
+
+#about a {
+  color: #555;
+}
+

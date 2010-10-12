@@ -1,6 +1,23 @@
-%form
-  %label
-    http://thatz.at/
-    %input{:value => @input}
-    .hint
-      i.e. tomorrow 2pm &mdash; sat 13:30 &mdash; sep 12 9am
+= haml :form, :layout => false
+
+#blablabla
+  %p
+    %h1
+      Your time in any timezone
+    Go to
+    %a{:href => 'http://thatz.at/Sat+9am'}
+      %code
+        thatz.at/Sat 9am
+    to see
+    %em
+      Saturday at 9am
+    in other timezones.
+  %p
+    %h1
+      Your time in your contacts' timezones
+    You've got redirected to
+    %a{:href => 'http://thatz.at/Oct-16-2010-9-00-GMT-8-DST'}
+      %code
+        thatz.at/Oct-16-2010-9-00-GMT-8-DST
+    %br
+    Share this link! Your contacts will see this time in their own timezone.
