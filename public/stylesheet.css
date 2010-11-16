@@ -1,5 +1,5 @@
 #main {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   font-size: 12pt;
   font-weight: bold;
@@ -107,6 +107,10 @@ tr.not_your_timezone td {
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 2pt;
   padding: 2pt;
+}
+
+#blablabla p {
+  margin: 30px;
 }
 
 a {text-decoration: underline; }
